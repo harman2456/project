@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="col-sm-4">
+    <form #f="ngForm" (ngSubmit)="submit(f)">
+    <div  class="form-group">
+            <label for="id1">Name:</label>
+            <input ngModel id="id1" type="text" class="form.control" name="v1" #v1="ngModel" (change)="log(v1)">
+            </div>
+        
+            <div class="form-group">
+            <label for ="id2">Regn No:</label>
+            <input type="text" id="id2"  class="form.control">
+            </div>
+
+
+            <div class="form-group">
+                    <label for ="id3">Section:</label>
+                    <input type="text" id="id3"  class="form.control">
+             </div>
+
+              <div class="form-group">
+                    <label for ="id6">Employment status:</label><br>
+                    
+                   student <input type="radio"  value="student"  class="form.control">
+                    working<input type="radio"  value="working"  class="form.control">
+              </div>
+
+              <div class="checkbox">
+                    <label> Qualification:</label>
+                    <br>Diploma<input type="checkbox" id="chkid1" ngModel name="qual1">
+                    <br> Post-Graduation<input type="checkbox" id="chkid2" ngModel name="qual2">
+                    <br> Graduation<input type="checkbox" id="chkid3" ngModel name="qual3">
+             </div>
+            
+             <div class="form-group">
+                    <label for="idrad">stream:</label><br>
+                    <select ngModel name="sel" id="idrad" class="form-control">
+                        <option *ngFor="let st of streams"[value]="st.id">{{st.name}}</option>
+                    </select>
+             </div>
+
+              
+            <button class="btn btn-primary" [disabled]="!f.valid" (click)="accept()">Submit</button>
+            </form>
+            </div>
+            </div>
